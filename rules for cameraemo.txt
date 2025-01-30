@@ -1,0 +1,1 @@
+if you want to quit from camera in cameraemo.ipynb, you should press "q" on english in window of camera
