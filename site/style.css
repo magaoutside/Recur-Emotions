@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000;
+    font-family: 'Halvar Breit', sans-serif;
+}
+#container {
+    width: 600px;
+    height: 1024px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* To hide content that may overflow during transition */
+}
+.screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    position: absolute; /* Positions screen over each other for easy transitions */
+    top: 0;
+    left: 0;
+}
+
+.hidden {
+    opacity: 0;
+    transform: scale(0.9); /* Scale it down slightly */
+    pointer-events: none; /* Make it not clickable */
+}
+
+
+/* Main Menu styles */
+#main_menu {
+  background: linear-gradient(to top left, #1F219D, #000000);
+}
+#main_menu .option-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+#open_camera, #analyze_photo, #analyze_video {
+  background: linear-gradient(to top left, #060698, #DD41DB);
+}
+
+
+#classifier_emotion_camera, #classifier_emotion_img, #classifier_emotion_video {
+  background: linear-gradient(to top left, #060698, #3CFFB9);
+}
+
+#no_human_in_photo, #no_human_in_video {
+    background: linear-gradient(to top left, #060698, #DD4144);
+}
+
+
+.screen-title {
+    font-size: 55px;
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.option-button {
+    padding: 15px 30px;
+    margin: 10px 0;
+    font-size: 40px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.option-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+.upload-box {
+    width: 475px;
+    height: 593.75px;
+    border: 2px dashed white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.upload-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 40px;
+    overflow: hidden;
+    object-fit: contain;
+}
+.image-preview, .video-preview{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 40px;
+    overflow: hidden;
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+.image-preview img, .video-preview video {
+   max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+.processed-image, .processed-video, .processed-camera{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 40px;
+    overflow: hidden;
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+}
+
+.processed-image img, .processed-video video, .processed-camera video{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+.camera-preview{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 40px;
+    overflow: hidden;
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.camera-preview video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.main-menu-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main-menu-button {
+    border: 2px dashed white;
+    background: transparent;
+}
+.process-hint{
+  color: white;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.back-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px; /* Adjust padding for circular shape */
+    width: 40px;  /* Set width */
+    height: 40px; /* Set height same as width to be perfect circle */
+    font-size: 20px;
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%; /* Make it a circle */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
