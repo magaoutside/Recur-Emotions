@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecurEmotions</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Halvar+Breit&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <div class="screen" id="main_menu">
+            <h1 class="screen-title">Выберите действие</h1>
+            <div class="main-menu-buttons">
+                <button class="option-button main-menu-button" data-action="open_camera">Анализ по камере</button>
+                <button class="option-button main-menu-button" data-action="upload_photo">Анализ по фото</button>
+                <button class="option-button main-menu-button" data-action="upload_video">Анализ по видео</button>
+            </div>
+        </div>
+
+        <div class="screen hidden" id="open_camera">
+            <h1 class="screen-title">Настройка камеры</h1>
+            <div class="content-box upload-box">
+                <div class="upload-placeholder camera-preview"></div>
+                <div class="process-hint">cameraemo.ipynb</div>
+            </div>
+             <button class="back-button"></button>
+        </div>
+
+        <div class="screen hidden" id="upload_photo">
+            <h1 class="screen-title">Загрузите фотографию</h1>
+            <div class="content-box upload-box">
+                <input type="file" id="photo_upload" accept="image/*" style="display:none">
+                <div class="upload-placeholder image-preview" data-upload-target="photo_upload"></div>
+                <div class="process-hint">imgemo.ipynb</div>
+            </div>
+            <button class="back-button"></button>
+        </div>
+
+        <div class="screen hidden" id="upload_video">
+            <h1 class="screen-title">Загрузите видео</h1>
+            <div class="content-box upload-box">
+              <input type="file" id="video_upload" accept="video/*" style="display:none">
+                <div class="upload-placeholder video-preview" data-upload-target="video_upload"></div>
+                <div class="process-hint">videmo.ipynb</div>
+            </div>
+            <button class="back-button"></button>
+        </div>
+
+        <div class="screen hidden" id="analyze_photo">
+            <h1 class="screen-title">Обработка фотографии</h1>
+            <div class="content-box upload-box">
+                <div class="upload-placeholder image-preview processed-image"></div>
+                <div class="process-hint">imgemo.ipynb</div>
+            </div>
+             <button class="back-button"></button>
+        </div>
+
+        <div class="screen hidden" id="analyze_video">
+            <h1 class="screen-title">Обработка видео</h1>
+            <div class="content-box upload-box">
+                <div class="upload-placeholder video-preview processed-video"></div>
+                <div class="process-hint">videmo.ipynb</div>
+            </div>
+             <button class="back-button"></button>
+        </div>
+
+      <div class="screen hidden" id="classifier_emotion_camera">
+           <h1 class="screen-title">Эмоция: <span id="camera_emotion_label">{emotion}</span></h1>
+            <div class="content-box upload-box">
+                <div class="upload-placeholder camera-preview processed-camera"></div>
+                <div class="process-hint">cameraemo.ipynb</div>
+            </div>
+           <button class="back-button"></button>
+        </div>
+
+        <div class="screen hidden" id="classifier_emotion_img">
+            <h1 class="screen-title">Эмоция: <span id="img_emotion_label">{emotion}</span></h1>
+            <div class="content-box upload-box">
+                <div class="upload-placeholder image-preview processed-image"></div>
+                 <div class="process-hint">imgemo.ipynb</div>
+            </div>
+           <button class="back-button"></button>
+        </div>
+
+        <div class="screen hidden" id="classifier_emotion_video">
+           <h1 class="screen-title">Эмоция: <span id="video_emotion_label">{emotion}</span></h1>
+            <div class="content-box upload-box">
+                <div class="upload-placeholder video-preview processed-video"></div>
+                <div class="process-hint">videmo.ipynb</div>
+            </div>
+             <button class="back-button"></button>
+        </div>
+
+        <div class="screen hidden" id="no_human_in_photo">
+            <h1 class="screen-title">Человек не обнаружен</h1>
+              <div class="content-box upload-box">
+                   <div class="upload-placeholder image-preview" data-upload-target="photo_upload"></div>
+                  <div class="process-hint">imgemo.ipynb</div>
+            </div>
+             <button class="back-button"></button>
+        </div>
+
+        <div class="screen hidden" id="no_human_in_video">
+            <h1 class="screen-title">Человек не обнаружен</h1>
+             <div class="content-box upload-box">
+               <div class="upload-placeholder video-preview" data-upload-target="video_upload"></div>
+                <div class="process-hint">videmo.ipynb</div>
+            </div>
+            <button class="back-button"></button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
